@@ -4,6 +4,8 @@ This is a demo of using `Netlify-CDN-Cache-Control` with `ETag` and  `stale-whil
 
 Visit [the demo site](https://netlify-edge-cache-demo.netlify.app/) to see this in action.
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-labs/cache-control-and-swr)
+
 Netlify supports the `Cache-Control`, `CDN-Cache-Control` and `Netlify-CDN-Cache-Control` headers, allowing you to send different cache instructions to your end users browser (`Cache-Control`), Netlify’s Edge (`Netlify-CDN-Cache-Control`), or any standards compliant CDN sitting in-between Netlify and your end user (`CDN-Cache-Control`).
 
 Here’s an example of a Function that will be cached on Netlify’s edge nodes until a new deploy goes live:
