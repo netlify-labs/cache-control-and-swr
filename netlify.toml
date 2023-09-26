@@ -1,0 +1,20 @@
+[build]
+    publish = "public"
+
+[[redirects]]
+    from = "/max-age"
+    to = "/.netlify/functions/max-age"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/etag"
+    to = "/.netlify/functions/etag"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/swr"
+    to = "/.netlify/functions/swr"
+    status = 200
+    force = true

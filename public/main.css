@@ -1,0 +1,52 @@
+/* Reset some default browser styles */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Pacaembu, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fefefe;
+    margin: 2em auto;
+    max-width: 40em; /* Control the body width */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+}
+
+p, ul, li {
+    margin-bottom: 1em;
+    color: #555;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+
+/* Responsive design to adjust typography */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+}
