@@ -15,7 +15,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         </head>
         <body>
             <h1>SWR Demo</h1>
-            <p>Stale While Revalidate is a cache standard that allows an HTTP Cache to serve stale content while fetching a fresh object in the background</p>
+            <p>Stale While Revalidate is a cache standard that allows an HTTP Cache to serve stale content while fetching a fresh object in the background.</p>
             <p>Products from <a href="https://fakestoreapi.com/">https://fakestoreapi.com/</a> were fetched ${new Date}</p>
             <p>The request took ${time} ms</p>
             <ul>${json.map((item) => `<li>${item.title}</li>`).join("\n")}</ul>

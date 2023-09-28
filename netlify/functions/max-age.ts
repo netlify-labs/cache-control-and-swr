@@ -17,7 +17,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
     <link rel="stylesheet" href="/main.css">
 </head>
 <h1>Max Age Demo</h1>
-<p>Max Age is a cache control header that tells the browser to cache the asset for a certain amount of time.</p>
+<p>"Netlify-CDN-Cache-Control" is a cache control header that tells Netlify to cache the asset for a certain amount of time.</p>
 <p>This page was generated at ${new Date()}</p>
 <p><a href="/">Go back</a></p>
 <body></html>`,

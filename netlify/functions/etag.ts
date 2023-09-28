@@ -10,7 +10,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         <link rel="stylesheet" href="/main.css">
     </head>
     <h1>ETag Demo</h1>
-    <p>Setting an ETag allow Netlify's Edge to do conditional get requests to the origin server</p>
+    <p>Setting an ETag allows the Netlify Edge to do conditional get requests to the origin server.</p>
     <p>This page was generated at TIMESTAMP</p>
     <p><a href="/">Go back</a></p>
     <body></html>`;
