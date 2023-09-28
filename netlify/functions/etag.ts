@@ -24,7 +24,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         "ETag": etag,
     }
 
-    if (event.headers["if-none-match"]?.replace(/-df"$/, '"') === etag) {
+    if (event.headers["if-none-match"] === etag) {
         return { statusCode: 304, headers }
     }
 

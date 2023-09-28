@@ -23,7 +23,6 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         </body><html>`,
         headers: {
             "Content-Type": "text/html",
-            "ETag": `w/"${Date.now()}"`,
             "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
             "Netlify-CDN-Cache-Control": "public, max-age=0, stale-while-revalidate=31536000", // Tell Edge to cache asset for up to a year
         }

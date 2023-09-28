@@ -52,7 +52,7 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
         "ETag": etag,
     }
 
-    if (event.headers["if-none-match"]?.replace(/-df"$/, '"') === etag) {
+    if (event.headers["if-none-match"] === etag) {
         return { statusCode: 304, headers }
     }
 
@@ -65,11 +65,6 @@ export { handler };
 ```
 
 In this case, if you deploy this function and visit it from an edge node, the string “Hello, World” will get cached on Netlify Edge. If you do a new deploy with no changes to the function, then the first time you visit the function our Edge Node will send a request back to the function with an `If-None-Match` header. The function will detect this and send back an empty 304 response, telling Netlify Edge to go ahead and keep using the response from the cache.
-
-<aside>
-💡 Small current gotcha on the `If-None-Match` header. Our Edge does automatic compression of text responses and will cache the compressed object instead of the raw text. When our cache stores an on-the-fly compressed object, it appends `-df` to the ETag so there’s no way end clients end up with two different responses for compressed or uncompressed assets with the same ETag.
-
-</aside>
 
 ## Stale While Revalidate
 
@@ -92,7 +87,6 @@ const handler: Handler = async (event: HandlerEvent, context: HandlerContext) =>
 				}),
         headers: {
             "Content-Type": "application/json",
-            "ETag": `w/"${Date.now()}"`,
             "Cache-Control": "public, max-age=0, must-revalidate", // Tell browsers to always revalidate
             "Netlify-CDN-Cache-Control": "public, max-age=0, stale-while-revalidate=31536000", // Tell Edge to cache asset for up to a year
         }
